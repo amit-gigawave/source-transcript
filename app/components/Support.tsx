@@ -64,10 +64,10 @@ const Support = () => {
             Support
           </Badge>
           {/* </motion.div> */}
-          <h1 className="text-5xl sm:text-6xl font-bold bg-gradient-to-r from-primary via-foreground to-secondary bg-clip-text text-transparent">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary via-foreground to-secondary bg-clip-text text-transparent">
             We're here to assist you
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             with every step of your journey
           </p>
         </motion.div>
@@ -142,7 +142,7 @@ const Support = () => {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {contactMethods.map((method, index) => (
               <ContactCard
                 key={index}

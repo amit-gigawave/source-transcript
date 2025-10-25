@@ -103,10 +103,10 @@ const ContactUs = () => {
               >
                 Get in Touch
               </Badge> */}
-              <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 Send us a Message
               </h2>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-base sm:text-lg text-muted-foreground">
                 Fill out the form below and we'll get back to you as soon as
                 possible
               </p>
@@ -141,13 +141,13 @@ const ContactUs = () => {
             >
               Our Locations
             </Badge>
-            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Office Locations
             </h2>
           </motion.div>
 
           {/* Office Address Cards */}
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-12">
             {offices.map((office, index) => (
               <ContentCard
                 key={index}
@@ -156,11 +156,11 @@ const ContactUs = () => {
                 size="md"
                 className="h-full"
               >
-                <div className="flex items-start gap-4">
+                <div className="flex flex-col sm:flex-row items-start gap-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-primary/15 to-secondary/15 rounded-full flex items-center justify-center flex-shrink-0">
                     <Building2 className="h-6 w-6 text-primary" />
                   </div>
-                  <address className="not-italic text-muted-foreground leading-relaxed">
+                  <address className="not-italic text-muted-foreground leading-relaxed text-sm sm:text-base">
                     {office.address.map((line, lineIndex) => (
                       <div key={lineIndex}>{line}</div>
                     ))}
@@ -195,16 +195,16 @@ const ContactUs = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              <h3 className="text-xl sm:text-2xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 Find Us on the Map
               </h3>
-              <div className="flex justify-center gap-4 mb-8">
+              <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-8">
                 {offices.map((office) => (
                   <Button
                     key={office.key}
                     variant={activeMap === office.key ? "default" : "outline"}
                     onClick={() => setActiveMap(office.key)}
-                    className={`flex items-center gap-2 ${
+                    className={`flex items-center justify-center gap-2 w-full sm:w-auto ${
                       activeMap === office.key
                         ? "bg-gradient-to-r from-primary to-secondary text-white"
                         : "border-secondary/20 hover:border-secondary/40"
@@ -212,14 +212,14 @@ const ContactUs = () => {
                     type="button"
                   >
                     <MapPin className="h-4 w-4" />
-                    {office.type}
+                    <span className="text-sm sm:text-base">{office.type}</span>
                   </Button>
                 ))}
               </div>
             </motion.div>
 
             <motion.div
-              className="w-full h-96 rounded-lg overflow-hidden shadow-xl border border-secondary/20"
+              className="w-full h-64 sm:h-80 md:h-96 rounded-lg overflow-hidden shadow-xl border border-secondary/20"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}

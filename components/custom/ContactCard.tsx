@@ -36,20 +36,24 @@ const ContactCard = ({
           className="absolute inset-0 bg-gradient-to-br from-primary/4 to-secondary/4 opacity-0 hover:opacity-100 transition-opacity duration-500"
           initial={false}
         />
-        <CardContent className="p-8 text-center space-y-6 relative z-10">
-          <div className="w-16 h-16 mx-auto bg-gradient-to-br from-primary/15 to-secondary/15 rounded-full flex items-center justify-center">
-            <IconComponent className="h-8 w-8 text-primary" />
+        <CardContent className="p-6 sm:p-8 text-center space-y-4 sm:space-y-6 relative z-10">
+          <div className="w-14 h-14 sm:w-16 sm:h-16 mx-auto bg-gradient-to-br from-primary/15 to-secondary/15 rounded-full flex items-center justify-center">
+            <IconComponent className="h-7 w-7 sm:h-8 sm:w-8 text-primary" />
           </div>
           <div className="space-y-2">
-            <h3 className="text-xl font-semibold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <h3 className="text-lg sm:text-xl font-semibold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               {title}
             </h3>
-            <p className="text-muted-foreground">{description}</p>
+            <p className="text-sm sm:text-base text-muted-foreground">
+              {description}
+            </p>
           </div>
-          <div className="space-y-4">
-            <p className="font-medium text-foreground">{contact}</p>
+          <div className="space-y-3 sm:space-y-4">
+            <p className="font-medium text-foreground text-sm sm:text-base break-words">
+              {contact}
+            </p>
             <Button
-              className="w-full bg-gradient-to-r from-secondary/10 to-primary/10 hover:from-secondary/20 hover:to-primary/20 text-secondary border border-secondary/20 hover:border-secondary/40"
+              className="w-full bg-gradient-to-r from-secondary/10 to-primary/10 hover:from-secondary/20 hover:to-primary/20 text-secondary border border-secondary/20 hover:border-secondary/40 text-sm sm:text-base"
               variant="outline"
               asChild
             >

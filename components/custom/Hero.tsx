@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ReactNode } from "react";
 import { motion } from "framer-motion";
 import { easings, durations, staggerContainer, fadeInUp } from "./animations";
+import { cn } from "@/lib/utils";
 
 interface HeroProps {
   badge?: string;
@@ -21,6 +22,7 @@ interface HeroProps {
   };
   backgroundVariant?: "default" | "gradient" | "muted";
   children?: ReactNode;
+  className?: string;
 }
 
 const Hero = ({
@@ -32,6 +34,7 @@ const Hero = ({
   secondaryAction,
   backgroundVariant = "default",
   children,
+  className,
 }: HeroProps) => {
   const getBackgroundClass = () => {
     switch (backgroundVariant) {
@@ -67,7 +70,10 @@ const Hero = ({
 
   return (
     <section
-      className={`relative py-24 px-4 sm:px-6 lg:px-8 ${getBackgroundClass()}`}
+      className={cn([
+        `relative py-24 px-4 sm:px-6 lg:px-8 ${getBackgroundClass()}`,
+        className,
+      ])}
     >
       {/* Animated background elements */}
       {backgroundVariant === "gradient" && (
@@ -117,7 +123,7 @@ const Hero = ({
         )}
 
         <motion.h1
-          className="text-4xl sm:text-5xl lg:text-7xl font-bold text-foreground mb-8 leading-tight"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-8 leading-tight"
           variants={fadeInUp}
         >
           <span className="bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent">
@@ -125,7 +131,7 @@ const Hero = ({
           </span>
           {subtitle && (
             <motion.span
-              className="block bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mt-4 text-3xl sm:text-4xl lg:text-5xl font-semibold"
+              className="block pb-5 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mt-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold"
               variants={fadeInUp}
             >
               {subtitle}
@@ -135,7 +141,7 @@ const Hero = ({
 
         {description && (
           <motion.p
-            className="text-xl sm:text-2xl text-muted-foreground max-w-4xl mx-auto mb-12 leading-relaxed font-light"
+            className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto mb-12 leading-relaxed font-light px-4"
             variants={fadeInUp}
           >
             {description}
@@ -144,7 +150,7 @@ const Hero = ({
 
         {(primaryAction || secondaryAction) && (
           <motion.div
-            className="flex flex-col sm:flex-row gap-6 justify-center mb-12"
+            className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-12 px-4"
             variants={fadeInUp}
           >
             {primaryAction && (
@@ -155,7 +161,7 @@ const Hero = ({
               >
                 <Button
                   size="lg"
-                  className="text-lg px-10 py-4 h-auto bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 shadow-lg hover:shadow-xl transition-all duration-300 border-0"
+                  className="text-base sm:text-lg px-6 sm:px-10 py-3 sm:py-4 h-auto bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 shadow-lg hover:shadow-xl transition-all duration-300 border-0 w-full sm:w-auto"
                   onClick={primaryAction.onClick}
                 >
                   {primaryAction.text}
@@ -171,7 +177,7 @@ const Hero = ({
                 <Button
                   variant="outline"
                   size="lg"
-                  className="text-lg px-10 py-4 h-auto border-2 border-secondary/30 hover:border-secondary hover:bg-secondary/5 transition-all duration-300"
+                  className="text-base sm:text-lg px-6 sm:px-10 py-3 sm:py-4 h-auto border-2 border-secondary/30 hover:border-secondary hover:bg-secondary/5 transition-all duration-300 w-full sm:w-auto"
                   onClick={secondaryAction.onClick}
                 >
                   {secondaryAction.text}

@@ -34,15 +34,15 @@ const Section = ({
   const getPaddingClass = () => {
     switch (padding) {
       case "sm":
-        return "py-12 px-4 sm:px-6 lg:px-8";
+        return "py-8 sm:py-12 px-4 sm:px-6 lg:px-8";
       case "md":
-        return "py-16 px-4 sm:px-6 lg:px-8";
+        return "py-12 sm:py-16 px-4 sm:px-6 lg:px-8";
       case "lg":
-        return "py-20 px-4 sm:px-6 lg:px-8";
+        return "py-16 sm:py-20 px-4 sm:px-6 lg:px-8";
       case "xl":
-        return "py-24 px-4 sm:px-6 lg:px-8";
+        return "py-20 sm:py-24 px-4 sm:px-6 lg:px-8";
       default:
-        return "py-20 px-4 sm:px-6 lg:px-8";
+        return "py-16 sm:py-20 px-4 sm:px-6 lg:px-8";
     }
   };
 

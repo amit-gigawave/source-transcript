@@ -26,11 +26,11 @@ const ContentCard = ({
   const getSizeClass = () => {
     switch (size) {
       case "sm":
-        return "p-6";
+        return "p-4 sm:p-6";
       case "lg":
-        return "p-12";
+        return "p-6 sm:p-8 md:p-12";
       default:
-        return "p-10";
+        return "p-6 sm:p-8 md:p-10";
     }
   };
 
@@ -125,7 +125,7 @@ const ContentCard = ({
                   ease: easings.easeOut,
                 }}
               >
-                <CardTitle className="text-3xl font-bold bg-gradient-to-r from-primary via-foreground to-secondary bg-clip-text text-transparent">
+                <CardTitle className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-primary via-foreground to-secondary bg-clip-text text-transparent">
                   {title}
                 </CardTitle>
               </motion.div>
@@ -135,7 +135,7 @@ const ContentCard = ({
 
         <CardContent className={`${getSizeClass()} relative z-10 py-0`}>
           <motion.div
-            className="text-lg text-muted-foreground leading-relaxed"
+            className="text-base sm:text-lg text-muted-foreground leading-relaxed"
             variants={contentVariants}
           >
             {children}

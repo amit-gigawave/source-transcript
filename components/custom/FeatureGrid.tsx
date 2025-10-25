@@ -102,12 +102,12 @@ const FeatureGrid = ({
             transition={{ duration: durations.slow, ease: easings.easeOut }}
           >
             {title && (
-              <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
                 {title}
               </h2>
             )}
             {subtitle && (
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4">
                 {subtitle}
               </p>
             )}
@@ -125,16 +125,19 @@ const FeatureGrid = ({
             <motion.div key={index} variants={itemVariants} whileHover="hover">
               <Card className={getCardClass()}>
                 <motion.div variants={cardHoverVariants}>
-                  <CardContent className="p-8">
-                    <motion.div className="mb-8" variants={iconVariants}>
-                      <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 group-hover:from-primary/30 group-hover:to-secondary/30 transition-all duration-500 shadow-lg">
-                        <feature.icon className="h-10 w-10 text-primary group-hover:text-primary/90 transition-colors duration-300" />
+                  <CardContent className="p-6 sm:p-8">
+                    <motion.div
+                      className="mb-6 sm:mb-8"
+                      variants={iconVariants}
+                    >
+                      <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 group-hover:from-primary/30 group-hover:to-secondary/30 transition-all duration-500 shadow-lg">
+                        <feature.icon className="h-8 w-8 sm:h-10 sm:w-10 text-primary group-hover:text-primary/90 transition-colors duration-300" />
                       </div>
                     </motion.div>
-                    <h3 className="text-2xl font-bold text-foreground mb-4 group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-secondary group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                    <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-3 sm:mb-4 group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-secondary group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
                       {feature.title}
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed text-lg">
+                    <p className="text-muted-foreground leading-relaxed text-base sm:text-lg">
                       {feature.description}
                     </p>
                   </CardContent>

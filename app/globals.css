@@ -119,10 +119,30 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Ensure proper mobile scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Prevent horizontal scroll on mobile */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Improve touch targets on mobile */
+  @media (max-width: 768px) {
+    button,
+    a {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
 }
 /* Phone input custom styles */
 .PhoneInput {
   display: flex;
+  width: 100%;
 }
 
 .PhoneInputInput {
@@ -137,6 +157,7 @@
   padding: 0.5rem 0.75rem;
   outline: none;
   transition: border-color 0.2s;
+  height: 2.5rem;
 }
 
 .PhoneInputInput:focus {
@@ -151,6 +172,8 @@
   background-color: hsl(var(--background));
   padding: 0.5rem;
   outline: none;
+  height: 2.5rem;
+  min-width: 4rem;
 }
 
 .PhoneInputCountrySelect:focus {
@@ -160,4 +183,17 @@
 
 .PhoneInputCountrySelectArrow {
   color: hsl(var(--muted-foreground));
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 640px) {
+  .PhoneInputInput {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+
+  .PhoneInputCountrySelect {
+    padding: 0.75rem 0.5rem;
+    min-width: 3.5rem;
+  }
 }

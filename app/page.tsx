@@ -4,6 +4,9 @@ import { useEffect } from "react";
 import AboutUs from "./components/AboutUs";
 import Support from "./components/Support";
 import ContactUs from "./components/ContactUs";
+import AnimatedBg2 from "@/components/custom/AnimatedBg2";
+import AnimatedBg from "@/components/custom/AnimatedBg";
+import HomeSection from "./components/HomeSection";
 
 // Extend Window interface for UnicornStudio
 declare global {
@@ -36,13 +39,16 @@ const Page = () => {
   }, []);
 
   return (
-    <section>
-      <div className="aura-background-component top-0 w-full -z-10 absolute h-full bg-primary">
+    <section className="overflow-x-hidden">
+      {/* <div className="aura-background-component top-0 w-full -z-10 absolute h-full ">
         <div
           data-us-project="JUFg0MwEcM3urKc9W7Vg"
           className="absolute w-full h-full left-0 top-0 -z-10"
         />
-      </div>
+      </div> */}
+      {/* <AnimatedBg className="h-[150vh]" /> */}
+      <AnimatedBg2 />
+      <HomeSection />
       <AboutUs />
       <Support />
       <ContactUs />
