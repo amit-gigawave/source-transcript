@@ -75,34 +75,30 @@ const ContactUs = () => {
       <Hero
         badge="Contact Us"
         title="Get in Touch"
-        subtitle="Get in touch with the SourceTranscript team. We'd love to hear from you."
+        subtitle="Get in touch with the Source Transcript team. We'd love to hear from you."
         description=""
         backgroundVariant="gradient"
-        primaryAction={{
-          text: "Email Us",
-          onClick: () => window.open("mailto:support@sourcetranscript.com"),
-        }}
-        secondaryAction={{
-          text: "Call Us",
-          onClick: () => window.open("tel:+918796448379"),
-        }}
+        className="pb-0"
+        // primaryAction={{
+        //   text: "Email Us",
+        //   onClick: () => window.open("mailto:support@sourcetranscript.com"),
+        // }}
+        // secondaryAction={{
+        //   text: "Call Us",
+        //   onClick: () => window.open("tel:+918796448379"),
+        // }}
       >
         {/* Contact Form Section */}
         <Section className="bg-transparent" padding="sm" maxWidth="2xl">
           <div className="space-y-8">
-            <motion.div
+            {/* <motion.div
               className="text-center"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              {/* <Badge
-                variant="secondary"
-                className="mb-6 text-sm font-medium px-4 py-2 bg-secondary/10 text-secondary border-secondary/20"
-              >
-                Get in Touch
-              </Badge> */}
+            
               <h2 className="text-2xl sm:text-3xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 Send us a Message
               </h2>
@@ -110,7 +106,7 @@ const ContactUs = () => {
                 Fill out the form below and we'll get back to you as soon as
                 possible
               </p>
-            </motion.div>
+            </motion.div> */}
 
             <ContentCard variant="bordered" size="lg">
               <Suspense

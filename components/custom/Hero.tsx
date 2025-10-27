@@ -126,12 +126,12 @@ const Hero = ({
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-8 leading-tight"
           variants={fadeInUp}
         >
-          <span className="bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-primary via-primary to-primary bg-clip-text text-transparent">
             {title}
           </span>
           {subtitle && (
             <motion.span
-              className="block pb-5 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mt-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold"
+              className="block pb-5 bg-gradient-to-r from-secondary to-secondary bg-clip-text text-transparent mt-4 text-xl sm:text-2xl md:text-2xl max-w-2xl mx-auto  font-semibold leading-10"
               variants={fadeInUp}
             >
               {subtitle}

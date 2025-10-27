@@ -47,7 +47,7 @@ const Page = () => {
         />
       </div> */}
       {/* <AnimatedBg className="h-[150vh]" /> */}
-      <AnimatedBg2 />
+      {/* <AnimatedBg2 /> */}
       <HomeSection />
       <AboutUs />
       <Support />

@@ -41,14 +41,14 @@ const AboutUs = () => {
         subtitle="Innovating Clinical Data Management for a Healthier Tomorrow"
         description=""
         backgroundVariant="gradient"
-        primaryAction={{
-          text: "Learn More",
-          onClick: () => console.log("Learn More clicked"),
-        }}
-        secondaryAction={{
-          text: "Contact Us",
-          onClick: () => console.log("Contact Us clicked"),
-        }}
+        // primaryAction={{
+        //   text: "Learn More",
+        //   onClick: () => console.log("Learn More clicked"),
+        // }}
+        // secondaryAction={{
+        //   text: "Contact Us",
+        //   onClick: () => console.log("Contact Us clicked"),
+        // }}
       />
 
       {/* Company Description Section */}

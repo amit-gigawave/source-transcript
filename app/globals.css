@@ -129,6 +129,9 @@
   body {
     overflow-x: hidden;
   }
+  body::-webkit-scrollbar {
+    display: none;
+  }
 
   /* Improve touch targets on mobile */
   @media (max-width: 768px) {
