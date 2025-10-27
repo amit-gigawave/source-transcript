@@ -12,7 +12,7 @@ A flexible hero section component for landing pages and feature introductions.
 import { Hero } from "@/components/custom";
 
 <Hero
-  badge="About SourceTranscript"
+  badge="About Source Transcript"
   title="Transform Clinical Research"
   subtitle="Through Innovation"
   description="Leading provider of clinical research technology solutions..."
@@ -186,7 +186,7 @@ const testimonials = [
     name: "Dr. Sarah Johnson",
     role: "Clinical Research Director",
     company: "MedTech Solutions",
-    content: "SourceTranscript has revolutionized our clinical trials...",
+    content: "Source Transcript has revolutionized our clinical trials...",
     rating: 5,
     avatar: "/avatars/sarah.jpg",
   },

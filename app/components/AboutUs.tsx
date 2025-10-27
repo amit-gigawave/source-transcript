@@ -33,10 +33,10 @@ const AboutUs = () => {
   ];
 
   return (
-    <PageLayout>
+    <PageLayout id={"about"}>
       {/* Hero Section */}
       <Hero
-        badge="About SourceTranscript"
+        badge="About Source Transcript"
         title="About Us"
         subtitle="Innovating Clinical Data Management for a Healthier Tomorrow"
         description=""
@@ -49,18 +49,19 @@ const AboutUs = () => {
         //   text: "Contact Us",
         //   onClick: () => console.log("Contact Us clicked"),
         // }}
-      />
+      >
+        <Section padding="sm" maxWidth="7xl" backgroundVariant="muted">
+          <ContentCard>
+            At Source Transcript, we are dedicated to transforming clinical data
+            management through cutting-edge technology and innovation. With a
+            deep understanding of the complexities of clinical trials, we
+            provide powerful, scalable, and compliant solutions that streamline
+            data collection, monitoring, and analysis.
+          </ContentCard>
+        </Section>
+      </Hero>
 
       {/* Company Description Section */}
-      <Section padding="xl" maxWidth="7xl">
-        <ContentCard className="mb-12">
-          At SourceTranscript, we are dedicated to transforming clinical data
-          management through cutting-edge technology and innovation. With a deep
-          understanding of the complexities of clinical trials, we provide
-          powerful, scalable, and compliant solutions that streamline data
-          collection, monitoring, and analysis.
-        </ContentCard>
-      </Section>
 
       {/* Platforms Section */}
       <FeatureGrid
@@ -73,11 +74,11 @@ const AboutUs = () => {
       {/* Mission Statement CTA */}
       <CallToAction
         title=""
-        description="Driven by a commitment to innovation, compliance, and data integrity, SourceTranscript empowers pharmaceutical companies, CROs, and research teams with reliable, user-friendly, and regulatory-compliant solutions. Our mission is to accelerate clinical research while maintaining the highest standards of quality and security."
+        description="Driven by a commitment to innovation, compliance, and data integrity, Source Transcript empowers pharmaceutical companies, CROs, and research teams with reliable, user-friendly, and regulatory-compliant solutions. Our mission is to accelerate clinical research while maintaining the highest standards of quality and security."
         backgroundVariant="card"
         maxWidth="7xl"
       >
-        <div className="bg-gradient-to-r from-primary/5 to-secondary/5 p-8 rounded-lg border-l-4 border-l-primary mt-8">
+        <div className="bg-gradient-to-r from-primary/5 to-secondary/5 p-8 rounded-lg border-l-4 border-l-primary ">
           <p className="text-xl font-semibold text-foreground">
             Partner with us to streamline your clinical trial operations and
             unlock the full potential of your data.

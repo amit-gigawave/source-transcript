@@ -29,6 +29,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { cn } from "@/lib/utils";
 
 const regionOptions = [
   { value: "india", label: "India" },
@@ -117,7 +118,11 @@ export default function FormDemoRequest() {
                   Name <span className="text-red-500">*</span>
                 </FormLabel>
                 <FormControl>
-                  <Input placeholder="John Doe" {...field} />
+                  <Input
+                    className="placeholder:text-foreground/30"
+                    placeholder="John Doe"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -135,6 +140,7 @@ export default function FormDemoRequest() {
                 <FormControl>
                   <Input
                     type="email"
+                    className="placeholder:text-foreground/30"
                     placeholder="john.doe@company.com"
                     {...field}
                   />
@@ -153,7 +159,11 @@ export default function FormDemoRequest() {
                   Job Title <span className="text-red-500">*</span>
                 </FormLabel>
                 <FormControl>
-                  <Input placeholder="Clinical Research Director" {...field} />
+                  <Input
+                    className="placeholder:text-foreground/30"
+                    placeholder="Clinical Research Director"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -189,7 +199,8 @@ export default function FormDemoRequest() {
                 <FormControl>
                   <Textarea
                     placeholder="Please describe your clinical research needs or project requirements..."
-                    className="resize-none"
+                    className="resize-none placeholder:text-foreground/30"
+                    // className="placeholder:text-foreground/30"
                     rows={4}
                     {...field}
                   />
@@ -212,8 +223,16 @@ export default function FormDemoRequest() {
                   defaultValue={field.value}
                 >
                   <FormControl>
-                    <SelectTrigger className="w-full">
-                      <SelectValue placeholder="Select your region" />
+                    <SelectTrigger
+                      className={cn([
+                        "w-full",
+                        !field.value && "!text-foreground/30",
+                      ])}
+                    >
+                      <SelectValue
+                        placeholder="Select your region"
+                        className="text-foreground/30"
+                      />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent position="popper">

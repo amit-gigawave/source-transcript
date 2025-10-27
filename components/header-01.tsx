@@ -15,6 +15,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import Image from "next/image";
 
 const Header = () => {
   const [menuState, setMenuState] = React.useState(false);
@@ -46,19 +47,12 @@ const Header = () => {
           <div className="relative flex flex-wrap items-center justify-between gap-3 py-3">
             <div className="flex w-full justify-between lg:w-auto">
               <a href="#" aria-label="home" className="flex gap-2 items-center">
-                <img
-                  src="https://raw.githubusercontent.com/aliimam-in/aliimam/refs/heads/main/apps/www/public/brand/ai-logo-white.png"
-                  alt="SourceTranscript Logo"
-                  height={50}
-                  width={50}
-                  className="h-8 sm:h-10 z-10 w-auto hidden dark:block object-contain"
-                />
-                <img
-                  src="https://raw.githubusercontent.com/aliimam-in/aliimam/refs/heads/main/apps/www/public/brand/ai-logo-black.png"
-                  alt="SourceTranscript Logo"
-                  height={50}
-                  width={50}
-                  className="h-8 sm:h-10 z-10 w-auto dark:hidden block object-contain"
+                <Image
+                  src={"/SourceLogo.png"}
+                  width={1000}
+                  height={1000}
+                  alt="logo"
+                  className="w-44"
                 />
               </a>
               <div className="flex gap-2">
@@ -88,6 +82,15 @@ const Header = () => {
                       onClick={() => setMenuState(false)}
                     >
                       <span>Home</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/#about"
+                      className="text-muted-foreground hover:text-primary text-lg block duration-150 py-2"
+                      onClick={() => setMenuState(false)}
+                    >
+                      <span>About Us</span>
                     </a>
                   </li>
                   <li>
@@ -132,6 +135,24 @@ const Header = () => {
                         </a>
                       </li>
                     </ul>
+                  </li>
+                  <li>
+                    <a
+                      href="/#support"
+                      className="text-muted-foreground hover:text-primary text-lg block duration-150 py-2"
+                      onClick={() => setMenuState(false)}
+                    >
+                      <span>Support</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/#contact"
+                      className="text-muted-foreground hover:text-primary text-lg block duration-150 py-2"
+                      onClick={() => setMenuState(false)}
+                    >
+                      <span>Contact</span>
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -187,18 +208,18 @@ export function Menus() {
             <a href="/">Home</a>
           </NavigationMenuLink>
         </NavigationMenuItem>
-        {/* <NavigationMenuItem>
+        <NavigationMenuItem>
           <NavigationMenuLink
             asChild
             className={cn(
               navigationMenuTriggerStyle(),
-              "bg-transparent text-xs"
+              "bg-transparent text-sm"
             )}
           >
-            <a href="#">Templates</a>
+            <a href="/#about">About Us</a>
           </NavigationMenuLink>
         </NavigationMenuItem>
-        <NavigationMenuItem>
+        {/* <NavigationMenuItem>
           <NavigationMenuLink
             asChild
             className={cn(
@@ -213,7 +234,7 @@ export function Menus() {
           <NavigationMenuTrigger className="bg-transparent text-sm">
             Products
           </NavigationMenuTrigger>
-          <NavigationMenuContent className="p-2">
+          <NavigationMenuContent className="p-2 px-5">
             <ul className="grid gap-3 md:grid-cols-3 max-w-xl lg:w-3xl">
               {components.map((component) => (
                 <ListItem
@@ -227,15 +248,15 @@ export function Menus() {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
-        {/* <NavigationMenuItem>
+        <NavigationMenuItem>
           <NavigationMenuLink
             asChild
             className={cn(
               navigationMenuTriggerStyle(),
-              "bg-transparent text-xs"
+              "bg-transparent text-sm"
             )}
           >
-            <a href="#">Icons</a>
+            <a href="/#support">Support</a>
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
@@ -243,12 +264,12 @@ export function Menus() {
             asChild
             className={cn(
               navigationMenuTriggerStyle(),
-              "bg-transparent text-xs"
+              "bg-transparent text-sm"
             )}
           >
-            <a href="#">Components</a>
+            <a href="/#contact">Contact</a>
           </NavigationMenuLink>
-        </NavigationMenuItem> */}
+        </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
   );
@@ -263,7 +284,7 @@ function ListItem({
     <li {...props}>
       <NavigationMenuLink asChild>
         <a className="p-3" href={href}>
-          <div className="text-sm leading-none font-medium">{title}</div>
+          <div className="text-base leading-none font-medium">{title}</div>
           <p className="text-muted-foreground line-clamp-2 text-xs leading-snug">
             {children}
           </p>

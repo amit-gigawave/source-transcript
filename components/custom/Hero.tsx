@@ -71,7 +71,7 @@ const Hero = ({
   return (
     <section
       className={cn([
-        `relative py-24 px-4 sm:px-6 lg:px-8 ${getBackgroundClass()}`,
+        `relative pt-24 px-4 sm:px-6 lg:px-8 ${getBackgroundClass()}`,
         className,
       ])}
     >
@@ -123,7 +123,7 @@ const Hero = ({
         )}
 
         <motion.h1
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-8 leading-tight"
+          className="text-3xl sm:text-4xl md:text-5xl mt-10 font-bold text-foreground mb-4 leading-tight"
           variants={fadeInUp}
         >
           <span className="bg-gradient-to-r from-primary via-primary to-primary bg-clip-text text-transparent">
@@ -141,7 +141,7 @@ const Hero = ({
 
         {description && (
           <motion.p
-            className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto mb-12 leading-relaxed font-light px-4"
+            className="text-lg sm:text-xl italic text-muted-foreground max-w-4xl mx-auto mb-12 leading-relaxed font-light px-4"
             variants={fadeInUp}
           >
             {description}

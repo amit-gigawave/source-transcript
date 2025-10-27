@@ -21,6 +21,8 @@ import {
   GitBranch,
   Search,
   Download,
+  ArrowUpRight,
+  Sparkles,
 } from "lucide-react";
 
 // Icon mapping from Bootstrap icons to Lucide icons
@@ -44,7 +46,7 @@ const iconMap: Record<string, any> = {
   "bi bi-download": Download,
 };
 
-// Feature card component with bento design
+// Enhanced modern bento feature card with sophisticated design
 export const BentoFeatureCard = ({
   icon,
   title,
@@ -63,7 +65,7 @@ export const BentoFeatureCard = ({
   const IconComponent = iconMap[icon] || FileText;
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 50, scale: 0.9 },
+    hidden: { opacity: 0, y: 40, scale: 0.92 },
     visible: {
       opacity: 1,
       y: 0,
@@ -71,15 +73,15 @@ export const BentoFeatureCard = ({
       transition: {
         duration: durations.slow,
         ease: easings.easeOut,
-        delay: index * 0.08, // Slightly faster stagger for 11 cards
+        delay: index * 0.08,
       },
     },
   };
 
   const cardHoverVariants = {
     hover: {
-      y: -4,
-      scale: 1.01,
+      y: -8,
+      scale: 1.02,
       transition: {
         duration: durations.normal,
         ease: easings.easeOut,
@@ -89,10 +91,34 @@ export const BentoFeatureCard = ({
 
   const iconVariants = {
     hover: {
-      scale: 1.1,
-      rotate: 5,
+      scale: 1.15,
+      rotate: 3,
       transition: {
         duration: durations.normal,
+        ease: easings.easeOut,
+      },
+    },
+  };
+
+  const arrowVariants = {
+    hover: {
+      x: 3,
+      y: -3,
+      opacity: 1,
+      transition: {
+        duration: durations.fast,
+        ease: easings.easeOut,
+      },
+    },
+  };
+
+  const sparkleVariants = {
+    hover: {
+      scale: [1, 1.2, 1],
+      rotate: [0, 180, 360],
+      transition: {
+        duration: 0.6,
+        ease: easings.easeOut,
       },
     },
   };
@@ -107,68 +133,88 @@ export const BentoFeatureCard = ({
       viewport={{ once: true }}
     >
       <Card
-        className={`border-0 shadow-lg backdrop-blur-sm bg-gradient-to-br from-card/60 to-card/40 hover:from-card/80 hover:to-card/60 transition-all duration-500 group h-full overflow-hidden relative ${
-          isLarge ? "min-h-[200px]" : "min-h-[180px]"
+        className={`border border-border/80 hover:border-primary/50 shadow-lg hover:shadow-2xl bg-card/90 backdrop-blur-sm hover:bg-card transition-all duration-500 group h-full overflow-hidden relative cursor-pointer ${
+          isLarge ? "min-h-[220px]" : "min-h-[200px]"
         }`}
       >
         <motion.div variants={cardHoverVariants} className="h-full">
           <CardContent
             className={`${
-              isLarge ? "p-8" : "p-6"
-            } h-full flex flex-col justify-between relative z-10`}
+              isLarge ? "p-8" : "p-7"
+            } h-full flex flex-col relative`}
           >
-            {/* Background decoration */}
-            <motion.div
-              className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-full blur-2xl -translate-y-8 translate-x-8 group-hover:from-primary/10 group-hover:to-secondary/10 transition-all duration-500"
-              animate={{
-                scale: [1, 1.1, 1],
-                opacity: [0.5, 0.8, 0.5],
-              }}
-              transition={{
-                duration: 4 + index * 0.2, // Vary animation timing slightly
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
+            {/* Animated background elements */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,var(--color-primary)_0%,transparent_50%)]/3 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,var(--color-secondary)_0%,transparent_50%)]/3 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
-            <div className="relative z-10">
-              <motion.div
-                className={`mb-4 ${isLarge ? "mb-6" : ""}`}
-                variants={iconVariants}
-              >
+            {/* Top section with icon and arrow */}
+            <div className="flex items-start justify-between mb-6">
+              <motion.div variants={iconVariants}>
                 <div
-                  className={`inline-flex items-center justify-center ${
-                    isLarge ? "w-16 h-16" : "w-12 h-12"
-                  } rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 group-hover:from-primary/30 group-hover:to-secondary/30 transition-all duration-500 shadow-lg group-hover:shadow-xl`}
+                  className={`relative inline-flex items-center justify-center ${
+                    isLarge ? "w-16 h-16" : "w-14 h-14"
+                  } rounded-3xl bg-primary/8 border border-primary/15 group-hover:bg-primary/12 group-hover:border-primary/25 group-hover:shadow-lg transition-all duration-500`}
                 >
                   <IconComponent
                     className={`${
-                      isLarge ? "w-8 h-8" : "w-6 h-6"
+                      isLarge ? "w-8 h-8" : "w-7 h-7"
                     } text-primary group-hover:text-primary/90 transition-colors duration-300`}
                   />
+
+                  {/* Subtle glow effect */}
+                  <div className="absolute inset-0 rounded-3xl bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm" />
                 </div>
               </motion.div>
 
+              {/* Interactive elements */}
+              <div className="flex items-center gap-2">
+                <motion.div
+                  variants={sparkleVariants}
+                  className="opacity-0 group-hover:opacity-60 transition-opacity duration-300"
+                >
+                  <Sparkles className="w-4 h-4 text-primary/60" />
+                </motion.div>
+
+                {/* <motion.div
+                  variants={arrowVariants}
+                  className="opacity-0 group-hover:opacity-70 transition-opacity duration-300"
+                >
+                  <ArrowUpRight className="w-5 h-5 text-muted-foreground" />
+                </motion.div> */}
+              </div>
+            </div>
+
+            {/* Content section */}
+            <div className="flex-1 flex flex-col">
               {title && (
                 <h3
                   className={`${
-                    isLarge ? "text-xl" : "text-lg"
-                  } font-bold text-secondary mb-3 group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-secondary group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300 leading-tight`}
+                    isLarge ? "text-xl mb-4" : "text-lg mb-3"
+                  } font-bold text-secondary group-hover:text-secondary/95 leading-tight tracking-tight transition-colors duration-300`}
                 >
                   {title}
                 </h3>
               )}
+
+              {description && (
+                <div className="mt-auto">
+                  <p
+                    className={`text-muted-foreground group-hover:text-muted-foreground/90 leading-relaxed ${
+                      isLarge ? "text-base" : "text-sm"
+                    } transition-colors duration-300`}
+                  >
+                    {description}
+                  </p>
+                </div>
+              )}
             </div>
 
-            {description && (
-              <p
-                className={`text-muted-foreground leading-relaxed ${
-                  isLarge ? "text-base" : "text-sm"
-                } mt-auto`}
-              >
-                {description}
-              </p>
-            )}
+            {/* Enhanced decorative elements */}
+            <div className="absolute bottom-0 left-0 right-0 h-px bg-border/20 group-hover:bg-primary/20 transition-colors duration-500" />
+            <div className="absolute top-0 right-0 w-12 h-12 bg-primary/3 rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-all duration-500" />
+
+            {/* Subtle corner highlight */}
+            <div className="absolute top-2 right-2 w-2 h-2 bg-primary/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           </CardContent>
         </motion.div>
       </Card>

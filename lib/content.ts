@@ -501,3 +501,25 @@ export const eLibraryFeatures: Features = {
     },
   ],
 };
+
+export const homeCards: {
+  title: string;
+  img: string;
+}[] = [
+  {
+    title: "eCRF (Electronic Case Report Form)",
+    img: "/EDCLOGO.jpg",
+  },
+  {
+    title: "IWRS (Interactive Web Response System)",
+    img: "/IWRSMAINLOGO.jpg",
+  },
+  {
+    title: "rSDV (Remote Source Data Verification)",
+    img: "/rSDV Logo.jpg",
+  },
+  {
+    title: "eTMF (Electronic Trial Master File)",
+    img: "/img_eTMF.png",
+  },
+];

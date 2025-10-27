@@ -30,7 +30,7 @@ const ContentCard = ({
       case "lg":
         return "p-6 sm:p-8 md:p-12";
       default:
-        return "p-6 sm:p-8 md:p-10";
+        return "p-6 sm:p-8 py-0";
     }
   };
 
@@ -93,7 +93,7 @@ const ContentCard = ({
 
         {(title || badge) && (
           <CardHeader
-            className={badge ? "pb-4 relative z-10" : "pb-6 relative z-10"}
+            className={badge ? "!pb-0 relative z-10 " : "pb-0 relative z-10"}
           >
             {badge && (
               <motion.div
@@ -125,7 +125,7 @@ const ContentCard = ({
                   ease: easings.easeOut,
                 }}
               >
-                <CardTitle className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-primary via-foreground to-secondary bg-clip-text text-transparent">
+                <CardTitle className="text-2xl  font-bold bg-gradient-to-r from-primary via-foreground to-secondary bg-clip-text text-transparent !pb-0">
                   {title}
                 </CardTitle>
               </motion.div>
@@ -133,7 +133,7 @@ const ContentCard = ({
           </CardHeader>
         )}
 
-        <CardContent className={`${getSizeClass()} relative z-10 py-0`}>
+        <CardContent className={`${getSizeClass()} relative z-10 !py-0`}>
           <motion.div
             className="text-base sm:text-lg text-muted-foreground leading-relaxed"
             variants={contentVariants}

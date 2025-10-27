@@ -22,7 +22,7 @@ const font = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: "SourceTranscript - Clinical Data Management Solutions",
+  title: "Source Transcript - Clinical Data Management Solutions",
   description:
     "Transforming clinical data management through cutting-edge technology and innovation. Providing powerful, scalable, and compliant solutions for clinical trials.",
   viewport: "width=device-width, initial-scale=1",

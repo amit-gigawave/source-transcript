@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
 import { motion } from "framer-motion";
 
 interface SectionProps {
@@ -10,6 +10,7 @@ interface SectionProps {
   padding?: "sm" | "md" | "lg" | "xl";
   maxWidth?: "sm" | "md" | "lg" | "xl" | "2xl" | "4xl" | "7xl" | "full";
   animate?: boolean;
+  id?: string;
 }
 
 const Section = ({
@@ -19,7 +20,40 @@ const Section = ({
   padding = "lg",
   maxWidth = "7xl",
   animate = true,
+  id,
 }: SectionProps) => {
+  // Scroll to section when id matches URL hash
+  useEffect(() => {
+    const scrollToSection = () => {
+      if (id && typeof window !== "undefined") {
+        const hash = window.location.hash.substring(1);
+        if (hash === id) {
+          const element = document.getElementById(id);
+          if (element) {
+            // Longer delay to ensure framer-motion animation completes
+            setTimeout(() => {
+              element.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }, 600); // Increased delay to account for page animation
+          }
+        }
+      }
+    };
+
+    // Initial scroll on mount
+    scrollToSection();
+
+    // Listen for hash changes (when user clicks links)
+    const handleHashChange = () => scrollToSection();
+    window.addEventListener("hashchange", handleHashChange);
+
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+    };
+  }, [id]);
+
   const getBackgroundClass = () => {
     switch (backgroundVariant) {
       case "muted":
@@ -115,6 +149,7 @@ const Section = ({
       initial={animate ? "hidden" : undefined}
       whileInView={animate ? "visible" : undefined}
       viewport={animate ? { once: true } : undefined}
+      id={id}
     >
       {/* Subtle animated background elements for gradient variants */}
       {(backgroundVariant === "muted" || backgroundVariant === "gradient") && (

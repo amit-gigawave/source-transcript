@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
 import { motion } from "framer-motion";
 
 interface PageLayoutProps {
@@ -8,6 +8,7 @@ interface PageLayoutProps {
   className?: string;
   backgroundVariant?: "default" | "gradient" | "muted";
   minHeight?: "screen" | "auto" | "full";
+  id?: string;
 }
 
 const PageLayout = ({
@@ -15,7 +16,40 @@ const PageLayout = ({
   className = "",
   backgroundVariant = "default",
   minHeight = "screen",
+  id,
 }: PageLayoutProps) => {
+  // Scroll to section when id matches URL hash
+  useEffect(() => {
+    const scrollToSection = () => {
+      if (id && typeof window !== "undefined") {
+        const hash = window.location.hash.substring(1);
+        if (hash === id) {
+          const element = document.getElementById(id);
+          if (element) {
+            // Longer delay to ensure framer-motion animation completes
+            setTimeout(() => {
+              element.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }, 600); // Increased delay to account for page animation
+          }
+        }
+      }
+    };
+
+    // Initial scroll on mount
+    scrollToSection();
+
+    // Listen for hash changes (when user clicks links)
+    const handleHashChange = () => scrollToSection();
+    window.addEventListener("hashchange", handleHashChange);
+
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+    };
+  }, [id]);
+
   const getBackgroundClass = () => {
     switch (backgroundVariant) {
       case "gradient":
@@ -50,6 +84,7 @@ const PageLayout = ({
       initial="hidden"
       animate="visible"
       transition={{ duration: 0.5 }}
+      // id={id}
     >
       {/* Animated background elements for enhanced variants */}
       {(backgroundVariant === "gradient" || backgroundVariant === "muted") && (
@@ -96,7 +131,9 @@ const PageLayout = ({
         </>
       )}
 
-      <div className="relative z-10">{children}</div>
+      <div className="relative z-10" id={id}>
+        {children}
+      </div>
     </motion.div>
   );
 };

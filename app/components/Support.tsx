@@ -46,7 +46,12 @@ const Support = () => {
   ];
 
   return (
-    <Section backgroundVariant="muted" padding="xl" className="min-h-screen">
+    <Section
+      id="support"
+      backgroundVariant="muted"
+      padding="xl"
+      className="min-h-screen"
+    >
       <div className="space-y-16">
         {/* Header Section */}
         <motion.div
@@ -64,7 +69,7 @@ const Support = () => {
             Support
           </Badge>
           {/* </motion.div> */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary via-foreground to-secondary bg-clip-text text-transparent">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl  font-bold bg-gradient-to-r from-primary via-foreground to-secondary bg-clip-text text-transparent">
             We're here to assist you
           </h1>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -81,7 +86,7 @@ const Support = () => {
         >
           <div className="space-y-8">
             <p className="text-lg leading-relaxed">
-              At SourceTranscript, we are committed to providing seamless
+              At Source Transcript, we are committed to providing seamless
               support to ensure you have the best experience with our services.
               Whether you have a question, need technical assistance, or require
               guidance, our team is ready to assist you.
@@ -177,14 +182,16 @@ const Support = () => {
 
               <Separator className="my-6" />
 
-              <div className="flex items-center justify-center gap-2 text-lg">
+              <div className="flex items-center justify-center gap-2 text-lg flex-wrap">
                 <span>
-                  We're here to make your experience with SourceTranscript
+                  We're here to make your experience with Source Transcript
                 </span>
-                <strong className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                  smooth and hassle-free!
-                </strong>
-                <span className="text-2xl">🚀</span>
+                <div>
+                  <strong className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                    smooth and hassle-free!
+                  </strong>
+                  <span className="text-2xl">🚀</span>
+                </div>
               </div>
             </div>
           </div>

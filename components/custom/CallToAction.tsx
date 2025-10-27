@@ -126,7 +126,7 @@ const CallToAction = ({
 
   const content = (
     <motion.div
-      className={`${getMaxWidthClass()} mx-auto ${getTextAlignClass()} relative z-10`}
+      className={`${getMaxWidthClass()} mx-auto ${getTextAlignClass()} relative z-10 p-0`}
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
@@ -144,7 +144,7 @@ const CallToAction = ({
       )}
 
       <motion.h2
-        className="text-4xl sm:text-5xl font-bold text-foreground mb-8 bg-gradient-to-r from-primary via-foreground to-secondary bg-clip-text text-transparent"
+        className="text-4xl font-bold text-foreground mb-4 bg-gradient-to-r from-primary via-foreground to-secondary bg-clip-text text-transparent p-0"
         variants={itemVariants}
       >
         {title}
@@ -241,7 +241,7 @@ const CallToAction = ({
   }
 
   return (
-    <section className={`py-24 px-4 sm:px-6 lg:px-8 ${getBackgroundClass()}`}>
+    <section className={`py-24 px-4 sm:px-6  ${getBackgroundClass()}`}>
       {/* Animated background elements */}
       {(backgroundVariant === "muted" || backgroundVariant === "gradient") && (
         <>
