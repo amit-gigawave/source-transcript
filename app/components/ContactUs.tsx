@@ -131,14 +131,8 @@ const ContactUs = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <Badge
-              variant="secondary"
-              className="mb-6 text-sm font-medium px-4 py-2 bg-secondary/10 text-secondary border-secondary/20"
-            >
-              Our Locations
-            </Badge>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Office Locations
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-primary">
+              Our Office Locations
             </h2>
           </motion.div>
 
