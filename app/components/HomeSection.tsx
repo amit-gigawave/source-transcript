@@ -11,7 +11,7 @@ const HomeSection = () => {
       className="min-h-screen"
     >
       {/* Bento Grid Layout */}
-      <div className="grid grid-cols-2 gap-4 mx-auto max-w-5xl">
+      <div className="flex gap-4 overflow-x-auto overflow-visible scrollbar">
         {/* First card - spans 2 columns, 2 rows (large) */}
         {homeCards.map((item) => (
           <TravelCard

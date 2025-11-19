@@ -78,7 +78,7 @@ const Header = () => {
                   <li>
                     <a
                       href="/"
-                      className="text-muted-foreground hover:text-primary text-lg block duration-150 py-2"
+                      className="text-primary hover:text-primary text-lg block duration-150 py-2"
                       onClick={() => setMenuState(false)}
                     >
                       <span>Home</span>
@@ -87,21 +87,21 @@ const Header = () => {
                   <li>
                     <a
                       href="/#about"
-                      className="text-muted-foreground hover:text-primary text-lg block duration-150 py-2"
+                      className="text-primary hover:text-primary text-lg block duration-150 py-2"
                       onClick={() => setMenuState(false)}
                     >
                       <span>About Us</span>
                     </a>
                   </li>
                   <li>
-                    <div className="text-muted-foreground text-lg py-2 font-medium">
+                    <div className="text-primary text-lg py-2 font-medium">
                       Products
                     </div>
                     <ul className="ml-4 mt-2 space-y-3">
                       <li>
                         <a
                           href="/EDC"
-                          className="text-muted-foreground hover:text-primary text-base block duration-150 py-1"
+                          className="text-primary hover:text-primary text-base block duration-150 py-1"
                           onClick={() => setMenuState(false)}
                         >
                           EDC
@@ -110,7 +110,7 @@ const Header = () => {
                       <li>
                         <a
                           href="/IWRS"
-                          className="text-muted-foreground hover:text-primary text-base block duration-150 py-1"
+                          className="text-primary hover:text-primary text-base block duration-150 py-1"
                           onClick={() => setMenuState(false)}
                         >
                           IWRS
@@ -119,7 +119,7 @@ const Header = () => {
                       <li>
                         <a
                           href="/rSDV"
-                          className="text-muted-foreground hover:text-primary text-base block duration-150 py-1"
+                          className="text-primary hover:text-primary text-base block duration-150 py-1"
                           onClick={() => setMenuState(false)}
                         >
                           rSDV
@@ -128,7 +128,7 @@ const Header = () => {
                       <li>
                         <a
                           href="/e-library"
-                          className="text-muted-foreground hover:text-primary text-base block duration-150 py-1"
+                          className="text-primary hover:text-primary text-base block duration-150 py-1"
                           onClick={() => setMenuState(false)}
                         >
                           E-Library
@@ -139,7 +139,7 @@ const Header = () => {
                   <li>
                     <a
                       href="/#support"
-                      className="text-muted-foreground hover:text-primary text-lg block duration-150 py-2"
+                      className="text-primary hover:text-primary text-lg block duration-150 py-2"
                       onClick={() => setMenuState(false)}
                     >
                       <span>Support</span>
@@ -148,7 +148,7 @@ const Header = () => {
                   <li>
                     <a
                       href="/#contact"
-                      className="text-muted-foreground hover:text-primary text-lg block duration-150 py-2"
+                      className="text-primary hover:text-primary text-lg block duration-150 py-2"
                       onClick={() => setMenuState(false)}
                     >
                       <span>Contact</span>
@@ -178,19 +178,19 @@ const components: { title: string; href: string; description: string }[] = [
     title: "IWRS",
     href: "/IWRS",
     description:
-      "Our Interactive Web Response System is engineered to simplify and accelerate clinical trial randomization and supply management with real-time access, built-in compliance, and user-friendly design.",
+      "Our IWRS Portal delivers a streamlined, automated solution for managing patient randomization and clinical trial supplies in real time. ",
   },
   {
     title: "rSDV",
     href: "/rSDV",
     description:
-      "rSDV revolutionizes clinical research monitoring by enabling remote source data verification through secure digital workflows, comprehensive audit trails, and role-based collaboration tools.",
+      "Transforming study oversight with intelligent, real-time remote monitoring that ensures cleaner data, faster issue detection, and fewer burdensome site visits.",
   },
   {
     title: "E-Library",
     href: "/e-library",
     description:
-      "The e-Library is more than a digital filing cabinet — it's a smart, secure, and collaborative system designed to simplify information management for research teams and organizations.",
+      "The e-Library is more than a digital filing cabinet. it's a smart, secure, and collaborative system designed to simplify information management for research teams and organizations.",
   },
 ];
 export function Menus() {
@@ -284,8 +284,8 @@ function ListItem({
     <li {...props}>
       <NavigationMenuLink asChild>
         <a className="p-3" href={href}>
-          <div className="text-base leading-none font-medium">{title}</div>
-          <p className="text-muted-foreground line-clamp-2 text-xs leading-snug">
+          <div className="text-lg  leading-none font-bold">{title}</div>
+          <p className="text-primary line-clamp-2 text-xs leading-snug">
             {children}
           </p>
         </a>

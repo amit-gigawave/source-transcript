@@ -74,8 +74,8 @@ const ContactUs = () => {
       {/* Hero Section */}
       <Hero
         badge="Contact Us"
-        title="Get in Touch"
-        subtitle="Get in touch with the Source Transcript team. We'd love to hear from you."
+        title=""
+        subtitle="Have questions or need assistance? Our Source Transcript team is here for you. We'd love to connect!"
         description=""
         backgroundVariant="gradient"
         className="pb-0"

@@ -133,7 +133,8 @@ export const edcFeatures: Features = {
 export const iwrsFeatures: Features = {
   title: "About Our IWRS System",
   description:
-    "Our Interactive Web Response System is engineered to simplify and accelerate clinical trial randomization and supply management with real-time access, built-in compliance, and user-friendly design.",
+    "Our IWRS Portal delivers a streamlined, automated solution for managing patient randomization and clinical trial supplies in real time. Designed for accuracy and efficiency, it enables sites and study teams to allocate subjects, track inventory, and manage resupplies effortlessly.",
+  // "Our Interactive Web Response System is engineered to simplify and accelerate clinical trial randomization and supply management with real-time access, built-in compliance, and user-friendly design.",
   child: [
     {
       title: "Key Features",
@@ -175,7 +176,8 @@ export const iwrsFeatures: Features = {
     {
       title: "eCRF (Electronic Case Report Forms)",
       description:
-        "TThe eCRF module is designed to be flexible, intuitive, and user-friendly, ensuring quick adoption across all sites.",
+        "Our eCRF Portal offers a user-friendly platform for accurate, compliant, and efficient clinical data capture. Designed with intuitive forms, real-time validation, and centralized oversight, it ensures clean data from the very first entry. Streamlined workflows help study teams monitor progress, resolve queries faster, and maintain high-quality datasets throughout the trial.",
+      // "TThe eCRF module is designed to be flexible, intuitive, and user-friendly, ensuring quick adoption across all sites.",
       cards: [
         {
           icon: "bi bi-file-earmark-text",
@@ -263,7 +265,8 @@ export const iwrsFeatures: Features = {
 export const rsdvFeatures: Features = {
   title: "Digital Transformation of Clinical Monitoring",
   description:
-    "rSDV revolutionizes clinical research monitoring by enabling remote source data verification through secure digital workflows, comprehensive audit trails, and role-based collaboration tools.",
+    "Transforming study oversight with intelligent, real-time remote monitoring that ensures cleaner data, faster issue detection, and fewer burdensome site visits.",
+  // "rSDV revolutionizes clinical research monitoring by enabling remote source data verification through secure digital workflows, comprehensive audit trails, and role-based collaboration tools.",
   child: [
     {
       title: "Core Modules",

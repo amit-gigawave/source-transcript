@@ -39,10 +39,10 @@ const Support = () => {
   ];
 
   const supportFeatures = [
-    "Technical troubleshooting and issue resolution",
-    "Step-by-step guidance for all features",
-    "Quick response times during business hours",
-    "Personalized assistance for your needs",
+    "Reliable technical support to quickly identify and resolve issues",
+    "Clear walkthroughs and feature-by-feature guidance",
+    "Prompt replies during business hours to keep your workflow moving",
+    "Customized help aligned with your project's unique needs                                                                          ",
   ];
 
   return (

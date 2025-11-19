@@ -52,11 +52,16 @@ const AboutUs = () => {
       >
         <Section padding="sm" maxWidth="7xl" backgroundVariant="muted">
           <ContentCard>
-            At Source Transcript, we are dedicated to transforming clinical data
+            {/* At Source Transcript, we are dedicated to transforming clinical data
             management through cutting-edge technology and innovation. With a
             deep understanding of the complexities of clinical trials, we
             provide powerful, scalable, and compliant solutions that streamline
-            data collection, monitoring, and analysis.
+            data collection, monitoring, and analysis. */}
+            We build powerful, intuitive clinical data management solutions that
+            simplify trial processes and elevate data quality. With a focus on
+            innovation, accuracy, and compliance, Source Transcript enables
+            research teams to run smarter, faster, and more efficient clinical
+            studies.
           </ContentCard>
         </Section>
       </Hero>
@@ -80,8 +85,8 @@ const AboutUs = () => {
       >
         <div className="bg-gradient-to-r from-primary/5 to-secondary/5 p-8 rounded-lg border-l-4 border-l-primary ">
           <p className="text-xl font-semibold text-foreground">
-            Partner with us to streamline your clinical trial operations and
-            unlock the full potential of your data.
+            Partner with us to streamline your clinical trial data management
+            and clinical operations and unlock the full potential of your data
           </p>
         </div>
       </CallToAction>
